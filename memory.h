@@ -1,9 +1,9 @@
-#ifndef clox_memory_h
-#define  clox_memory_h
+#ifndef lox_memory_h
+#define lox_memory_h
 
 #include "common.h"
 
-#define  GROP_CAPACITY(capacity)\
+#define  GROW_CAPACITY(capacity)\
   ((capacity) < 8 ? 8: (capacity)*2)
 
 #define GROW_ARRAY(type, pointer, oldCount, newCount) \
