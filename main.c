@@ -1,29 +1,30 @@
-#include "chunk.h"
 #include "vm.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main(int argc, const char* argv[]) {
+static void repl() {
+  char line[1024];
+  for(;;) {
+    printf(">");
+    if(!fgets(line, sizeof(line), stdin)) {
+      printf("\n");
+      break;
+    }
+
+   printf("%s", line); }
+}
+
+int main(int argc, const char *argv[]) {
   initVM();
-  Chunk chunk;
-  initChunk(&chunk);
-
-  int constant = addConstant(&chunk, 1.2);
-  writeChunk(&chunk, OP_CONSTANT, 123);
-  writeChunk(&chunk, constant, 123);
-  constant = addConstant(&chunk, 3.4);
-  writeChunk(&chunk, OP_CONSTANT, 123);
-  writeChunk(&chunk, constant, 123);
-
-  writeChunk(&chunk, OP_ADD, 123);
-
-  constant = addConstant(&chunk, 5.6);
-  writeChunk(&chunk, OP_CONSTANT, 123);
-  writeChunk(&chunk, constant, 123);
-
-  writeChunk(&chunk, OP_DIVIDE, 123);
-  writeChunk(&chunk, OP_NEGETE, 123);
-  writeChunk(&chunk, OP_RETURN, 123);
-  interpret(&chunk);
+  if(argc == 1) {
+    repl();
+  } else if(argc == 2) {
+    // file inputed
+  } else {
+    fprintf(stderr,"Usage: lox [path]\n");
+    exit(64);
+  }
   freeVM();
-  freeChunk(&chunk);
   return 0;
 }
