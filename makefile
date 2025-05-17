@@ -8,7 +8,7 @@ CFLAGS = -Wall -g
 TARGET = myprogram
 
 # Source files
-SOURCES = main.c chunk.c debug.c memory.c value.c vm.c
+SOURCES = main.c chunk.c debug.c memory.c value.c vm.c compiler.c scanner.c
 
 # Object files (replace .c with .o)
 OBJECTS = $(SOURCES:.c=.o)
