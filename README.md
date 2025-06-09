@@ -1,1 +1,1 @@
-VM or Intepreter for joy lang try to learn C but Do project fuck
+VM or Intepreter for joy lang try to learn C but Do project fuck, C is fucking simple lang that I fucking love
