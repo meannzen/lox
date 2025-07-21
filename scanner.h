@@ -1,6 +1,5 @@
 #ifndef lox_scanner_h
 #define lox_scanner_h
-
 typedef enum {
   LEFT_PAREN,
   RIGHT_PAREN,
