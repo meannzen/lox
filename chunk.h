@@ -10,9 +10,11 @@ typedef enum {
   OP_SUBTRACT,
   OP_MULTIPLY,
   OP_DIVIDE,
-  OP_NEGETE,
+  OP_NEGATE,
   OP_RETURN,
 } OpCode;
+
+
 
 typedef struct {
   int count;

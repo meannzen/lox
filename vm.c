@@ -12,11 +12,11 @@ static void resetStack() {
 }
 
 void initVM() {
-  resetStack();  
+  resetStack();
 }
 
 void freeVM() {
-  
+
 }
 
 void push(Value value) {
@@ -62,7 +62,7 @@ static InterpretResult run() {
       case OP_SUBTRACT:  BINARY_OP(-); break;
       case OP_MULTIPLY:  BINARY_OP(*); break;
       case OP_DIVIDE:  BINARY_OP(/); break;
-      case OP_NEGETE: push(-pop()); break;
+      case OP_NEGATE: push(-pop()); break;
       case OP_RETURN: {
           printValue(pop());
           printf("\n");
@@ -92,4 +92,3 @@ InterpretResult interpret(const char*source) {
   freeChunk(&chunk);
   return result;
 }
-
