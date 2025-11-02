@@ -16,6 +16,10 @@ static void repl() {
   }
 }
 
+int man() {
+   return 0;
+}
+
 static char* readFile(const char *path) {
   FILE * file = fopen(path, "rb");
   if(file == NULL) {
@@ -69,4 +73,8 @@ int main(int argc, const char *argv[]) {
   freeVM();
 
   return 0;
+}
+
+int x() {
+    return 2;
 }
